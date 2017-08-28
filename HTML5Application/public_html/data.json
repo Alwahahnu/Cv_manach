@@ -1,0 +1,10 @@
+[
+    [
+      {"area": "HTML5 ", "value": 80},
+      {"area": "AJAX", "value": 50},
+      {"area": "CSS ", "value": 80},
+      {"area": "SQL ", "value": 50},
+      {"area": "PHP ", "value": 60},
+      {"area": "JAVASCRIPT ", "value": 60}
+  	]
+  ]

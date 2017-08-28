@@ -1,0 +1,251 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Loire-atlantique</title>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<div>
+	<h2>offre par site</h2>
+	<svg width="960" height="500"></svg>
+</div>
+	<h2>Occurences compétences</h2>
+<script src="gradientPie.js"></script>
+
+	<script>
+	/* test 3
+anychart.onDocumentReady(function() {
+
+    // create a data set
+    var data = anychart.data.set([
+      ["offre 1", 10000, 12500],
+      ["offre 2", 12000, 15000],
+      ["offre 3", 13000, 16500],
+    ]);
+
+    // map the data
+    var seriesData_1 = data.mapAs({x: 0, value: 1});
+    var seriesData_2 = data.mapAs({x: 0, value: 2});
+
+    // create a chart
+    chart = anychart.mosaic();
+
+    // swap axes
+    chart.xAxis().orientation("left");
+    chart.yAxis().orientation("bottom");    
+
+    // add series and change the orientation
+    var series1 = chart.mekko(seriesData_1).name("Item 1");
+    series1.isVertical(true);
+
+    var series2 = chart.mekko(seriesData_2).name("Item 2");
+    series2.isVertical(true);
+
+    // set the chart title
+    chart.title("Vertical Charts: Mosaic Chart");
+
+    // set the container id
+    chart.container("container");
+
+    // initiate drawing the chart
+    chart.draw();
+});*/
+/*test 6
+	var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var format = d3.format(",d");
+
+var color = d3.scaleOrdinal(d3.schemeCategory20c);
+
+var pack = d3.pack()
+    .size([width, height])
+    .padding(1.5);
+
+d3.csv("flare.csv", function(d) {
+  d.value = +d.value;
+  if (d.value) return d;
+}, function(error, classes) {
+  if (error) throw error;
+
+  var root = d3.hierarchy({children: classes})
+      .sum(function(d) { return d.value; })
+      .each(function(d) {
+        if (id = d.data.id) {
+          var id, i = id.lastIndexOf(".");
+          d.id = id;
+          d.package = id.slice(0, i);
+          d.class = id.slice(i + 1);
+        }
+      });
+
+  var node = svg.selectAll(".node")
+    .data(pack(root).leaves())
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("circle")
+      .attr("id", function(d) { return d.id; })
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return color(d.package); });
+
+  node.append("clipPath")
+      .attr("id", function(d) { return "clip-" + d.id; })
+    .append("use")
+      .attr("xlink:href", function(d) { return "#" + d.id; });
+
+  node.append("text")
+      .attr("clip-path", function(d) { return "url(#clip-" + d.id + ")"; })
+    .selectAll("tspan")
+    .data(function(d) { return d.class.split(/(?=[A-Z][^A-Z])/g); })
+    .enter().append("tspan")
+      .attr("x", 0)
+      .attr("y", function(d, i, nodes) { return 13 + (i - nodes.length / 2 - 0.5) * 10; })
+      .text(function(d) { return d; });
+
+  node.append("title")
+      .text(function(d) { return d.id + "\n" + format(d.value); });
+});*/
+/*	
+	var canvas1=d3.select(".result-side1a")
+var tree = {
+    name: "assemblee",
+    children: [
+        { name: "offre 1", size: 100, "couleur": "blue" },
+        { name: "offre 2", size: 100, "couleur": "steelblue" },
+        { name: "offre 3", size: 100, "couleur": "blue" }
+    ]
+};
+var width = 560,
+height = 560,
+div = d3.select(".result-side1a").append("div")
+    .style("position", "relative");
+
+var treemap = d3.layout.treemap()
+    .size([width, height])
+    .sticky(true)
+    .value(function(d) { return d.size; });
+	
+var node = div.datum(tree).selectAll(".node")
+	.data(treemap.nodes)
+    .enter()
+    .append("div")
+    .attr("class", "node")
+    .call(position)
+    .style("background-color", function(d) {
+        return d.name == 'tree' ? '#fff' : d.couleur; })
+    .append('div')
+    .style("font-size", function(d) {
+        // compute font size based on sqrt(area)
+      return Math.max(20, 0.18*Math.sqrt(d.area))+'px'; })
+    .text(function(d) { return d.children ? null : d.name; });
+ 
+function position() {
+  this.style("left", function(d) { return d.x + "px"; })
+      .style("top", function(d) { return d.y  + "px"; })
+      .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
+      .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
+};*/
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+
+var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+    y = d3.scaleLinear().rangeRound([height, 0]);
+
+var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.tsv("data.tsv", function(d) {
+  d.frequency = +d.frequency;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.letter; }));
+  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "%"))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Frequency");
+
+  g.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.letter); })
+      .attr("y", function(d) { return y(d.frequency); })
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(d.frequency); });
+});
+
+
+
+</script>
+<script>
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------->
+var width = 960,
+    height = 500,
+    radius = Math.min(width, height) / 2;
+
+var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+var arc = d3.svg.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(radius - 70);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.population; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+d3.csv("data.csv", type, function(error, data) {
+  if (error) throw error;
+
+  var g = svg.selectAll(".arc")
+      .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+  g.append("path")
+      .attr("d", arc)
+      .style("fill", function(d) { return color(d.data.age); });
+
+  g.append("text")
+      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .text(function(d) { return d.data.age; });
+});
+
+function type(d) {
+  d.population = +d.population;
+  return d;
+}
+	</script>
+    <div id="container" style="width: 1500px; height: 1400px;">
+	</div>
+</body>
+</html>
