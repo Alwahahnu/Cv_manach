@@ -1,139 +1,145 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link type="text/css" rel="stylesheet" href="libraries/bootstrap4/css/bootstrap.css"/>
-        <link type="text/css" rel="stylesheet" href="libraries/animate.css"/>
-        <link rel="stylesheet" href="Style_cv.css" />
+<head>
+<meta charset="utf-8" />
+<link type="text/css" rel="stylesheet"
+	href="libraries/bootstrap4/css/bootstrap.css" />
+<link type="text/css" rel="stylesheet" href="libraries/animate.css" />
+<link rel="stylesheet" href="Style_cv.css" />
+<link rel="stylesheet" href="libraries/animate.css" />
+<link rel="stylesheet" href="anime.css" />
 
-        <title>CV MANACH</title>
+<title>CV MANACH</title>
 
-        <script type="text/javascript" src="libraries/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="libraries/tether-1.3.3/dist/js/tether.js"></script>
-        <script type="text/javascript" src="libraries/bootstrap4/js/bootstrap.js"></script>
+<script type="text/javascript" src="libraries/jquery-3.2.1.min.js"></script>
+<script type="text/javascript"
+	src="libraries/tether-1.3.3/dist/js/tether.js"></script>
+<script type="text/javascript"
+	src="libraries/bootstrap4/js/bootstrap.js"></script>
 
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="RadarChart.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="RadarChart.js"></script>
 
-        <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="radchart.js"></script>
 
-    </head>
-    <body>
-        <div class="container">
-        <header class="row">
-            <div class="col-2 offset-1">
-                <img src="images/1Chris-wankul-droite.png" style="width:150px;height:150px">
-            </div>
-            <div class="center col-4 offset-2">
-                <h4>MANACH Christian</h4>
-                <h4>26 ans</h4>	            
-                <H2>Développeur WEB</H2>
-                <a href="1-2cv.html">
-                    <p>
-                        contactez-moi
-                    </p>
-                </a>
-            </div>
-        </header>
-        </div>
-        <div class="box"></div>
-        <div class="container">
-            <div class="row">
-                <div class="partie_grise col-4">
+</head>
+<body>
+	<div class="container">
+		<header class="row">
+			<div class="col-2 offset-1">
+				<img src="images/1Chris-wankul-droite.png"
+					style="width: 150px; height: 150px">
+			</div>
+			<div class="center col-4 offset-2">
+				<h4>MANACH Christian</h4>
+				<h4>26 ans</h4>
+				<H2>Développeur WEB</H2>
+				<a href="1-2cv.html">
+					<p>contactez-moi</p>
+				</a>
+			</div>
+		</header>
+	</div>
+	<div class="box"></div>
+	<div class="container">
+		<div class="row">
+			<div id="comp" class="partie_grise col-lg-4 animated fadeIn">
 
-                    <div class="box">
-                        <h3>COMPÉTENCES :</h3>
-                        <div>
-                            <input type='checkbox' checked/>Développer de nouveaux sites Internet et application Web.
-                        </div>
-                        <div>
-                            <input type='checkbox' checked/>Maintenir des sites déjà existants.
-                        </div>
-                        <div>
-                            <input type='checkbox' checked/>Modifier des sites Internet.
-                        </div>
-                        <div>
-                            <input type='checkbox' checked/>S'autoformer sur de nouvelles technologies.
-                        </div>
-                    </div>
+				<div class="box">
+					<h3>COMPÉTENCES :</h3>
+					<div>
+						<input type='checkbox' checked />Développer de nouveaux sites
+						Internet et application Web.
+					</div>
+					<div>
+						<input type='checkbox' checked />Maintenir des sites déjà
+						existants.
+					</div>
+					<div>
+						<input type='checkbox' checked />Modifier des sites Internet.
+					</div>
+					<div>
+						<input type='checkbox' checked />S'autoformer sur de nouvelles
+						technologies.
+					</div>
+				</div>
 
-                    <div class="box">
-                        <h3>QUALITÉS</h3>
-                        <ul>
-                            <li>Autonome</li>
-                            <li>Créatif</li>
-                            <li>Persévérant</li>
-                            <li>Esprit Synthétique</li>
-                            <li>Autodidacte</li>
-                        </ul> 
-                    </div>
-                    <div class="box">
-                        <h3>LANGUAGES</h3>
-                        <div class="col-4" id="chart"></div>
-                    </div>
-                    <div>
-                        <h3>MOYEN DE LOCOMOTION</h3>
-                        <p>Permis : B</p>
-                        <p>Véhicule personnel</p>
-                    </div>
-                    <div class="box" >
-                        <a href="https://twitter.com/?request_context=signup">
-                            <img src="images/twitter.png" alt="twitter" height="42" width="42"/>
-                        </a>
+				<div class="box">
+					<h3>QUALITÉS</h3>
+					<ul>
+						<li>Autonome</li>
+						<li>Créatif</li>
+						<li>Persévérant</li>
+						<li>Esprit Synthétique</li>
+						<li>Autodidacte</li>
+					</ul>
+				</div>
+				<div class="box">
+					<h3>LANGUAGES</h3>
+					<div class="col-4" id="chart"></div>
+				</div>
+				<div>
+					<h3>MOYEN DE LOCOMOTION</h3>
+					<p>Permis : B</p>
+					<p>Véhicule personnel</p>
+				</div>
+				<div class="box">
+					<a href="https://twitter.com/?request_context=signup"> <img
+						src="images/twitter.png" alt="twitter" height="42" width="42" />
+					</a> <a href="https://www.facebook.com/profile.php?id=100018795968689">
+						<img src="images/facebook.png" alt="facebook" height="42"
+						width="42" />
+					</a>
+				</div>
+			</div>
 
-                        <a href="https://www.facebook.com/profile.php?id=100018795968689">
-                            <img src="images/facebook.png" alt="facebook" height="42" width="42"/>
-                        </a>
-                    </div>
-                </div>
+			<!-----------------------partie 2-------------------------------->
+			<div class="col-lg-7 offset-lg-1">
+				<div id="exp" class="box_vert animated fadeInRight">
+					<h3>EXPÉRIENCE PROFESSIONNELLE</h3>
+					<p>01/07/2009 au 31/07/2009 : MGB3000</p>
+					<p>Manutentionaire</p>
+				</div>
+				<div class="box"></div>
+				<div id="andix" class="box_bleu animated fadeInLeft">
+					<h3>DIPLOMES</h3>
+				</div>
+				<div class="box"></div>
+				<div class="box_bleu animated fadeInLeft">
+					<h3>2017</h3>
+					<div>
+						<h3>TITRE PROFESSIONNEL DE DÉVELOPPEUR WEB (en cours)</h3>
+						<p>Aformac</p>
 
-                <!-----------------------partie 2-------------------------------->
-                <div class="col-7 offset-1"> 
-                    <div class="box_vert bounceInRight">
-                        <h3>EXPÉRIENCE PROFESSIONNELLE</h3>
-                        <p>01/07/2009 au 31/07/2009 : MGB3000</p>
-                        <p>Manutentionaire</p>
-                    </div>
-                    <div class="box"></div>
-                    <div class="box_bleu bounceInLeft">
-                        <h3>DIPLOMES</h3>
-                    </div>
-                    <div class="box"></div>
-                    <div class="box_bleu bounceInLeft">
-                        <h3>2017</h3>
-                        <div>
-                            <h3>TITRE PROFESSIONNEL DE DÉVELOPPEUR WEB (en cours)</h3>
-                            <p>Aformac</p>
+						<h3>CERTIFICATION PROFESSIONNELLE DE PROGRAMTION DE SITE WEB
+							(en cours)</h3>
+						<p>Conservatoire Nationale des Arts et Métiers</p>
+					</div>
+				</div>
+				<div class="box"></div>
+				<div id="anquatorze" class="box_bleu animated fadeInRight">
+					<h3>2014</h3>
+					<div>
+						<h3>CAPACITÉ EN DROIT</h3>
+						<p>Faculté de Droit de Brive</p>
 
-                            <h3>CERTIFICATION PROFESSIONNELLE DE PROGRAMTION DE SITE WEB (en cours)</h3> 
-                            <p>Conservatoire Nationale des Arts et Métiers</p>
-                        </div>
-                    </div>
-                    <div class="box"></div>
-                    <div class="box_bleu bounceInRight">
-                        <h3>2014</h3>
-                        <div>
-                            <h3>CAPACITÉ EN DROIT</h3>
-                            <p>Faculté de Droit de Brive</p>
-
-                        </div>
-                    </div>
-                    <div class="box"></div>
-                    <div class="box_bleu bounceInLeft">
-                        <h3>2010</h3>
-                        <div class="texte-align">
-                            <h3>BAC PRO EN RÉALISATION D'OUVRAGE CHAUDRONNÉE</h3>
-                            <p>Lycée Professionnel Lavoisier</p>
-                        </div>
-                    </div>
-                    <div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            var width = 200,
-                    height = 200;
+					</div>
+				</div>
+				<div class="box"></div>
+				<div id="andixsept" class="box_bleu animated bounceInLeft">
+					<h3>2010</h3>
+					<div class="texte-align">
+						<h3>BAC PRO EN RÉALISATION D'OUVRAGE CHAUDRONNÉE</h3>
+						<p>Lycée Professionnel Lavoisier</p>
+					</div>
+				</div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<script>
+            var width = 220,
+                height = 220;
 
 // Config for the Radar chart
             var config = {
@@ -154,9 +160,13 @@
             var svg = d3.select('body')
                     .selectAll('svg')
                     .append('svg')
-                    .attr("width", width)
-                    .attr("height", height);
+                    .attr("width", '100%')
+                    .attr("height", '100%')
+                    .attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+    				.attr('preserveAspectRatio','xMinYMin')
+    				.append("g")
+    				.attr("transform", "translate(" + Math.min(width,height) / 2 + "," + Math.min(width,height) / 2 + ")");;
         </script>
 
-    </body>
+</body>
 </html>
